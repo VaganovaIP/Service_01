@@ -21,7 +21,8 @@ public class MyController {
     private final MyModifyService myModifyService;
     private final ModifyRequestService modifyRequestService;
     @Autowired
-    public MyController(@Qualifier("ModifySystemTime") MyModifyService myModifyService, ModifyRequestService modifyRequestService){
+    public MyController(@Qualifier("ModifySystemTime") MyModifyService myModifyService,
+                        ModifyRequestService modifyRequestService){
         this.myModifyService = myModifyService;
         this.modifyRequestService = modifyRequestService;
     }
@@ -33,7 +34,7 @@ public class MyController {
         Response response = Response.builder()
                 .uid(request.getUid())
                 .operationUid(request.getOperationUid())
-                .systemtime(request.getSystemtime())
+                .systemTime(request.getSystemTime())
                 .code("success")
                 .errorCode("")
                 .errorMessage("")
